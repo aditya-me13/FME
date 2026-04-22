@@ -416,7 +416,7 @@ with st.sidebar:
     st.divider()
     st.subheader("Historical Backtest")
     period = st.selectbox("History Window", options=["1y", "2y", "3y", "5y", "10y"], index=2)
-    strike_buffer_pct = st.slider("Put OTM Buffer (%)", min_value=0.0, max_value=20.0, value=5.0, step=0.5) / 100.0
+    strike_buffer_pct = st.slider("Strike Offset (%): +ve = OTM, -ve = ITM",min_value=-20.0,max_value=20.0,value=5.0,step=0.5) / 100.0
     expiry_days = st.slider("Roll Frequency (trading days)", min_value=5, max_value=63, value=21, step=1)
     vol_window = st.slider("Volatility Window (days)", min_value=10, max_value=90, value=30, step=5)
 
